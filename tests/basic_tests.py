@@ -4,6 +4,8 @@ import unittest
 
 from flask import url_for
 
+from app import create_app
+
 class MyTestCase(unittest.TestCase):
 
 	def setUp(self):
