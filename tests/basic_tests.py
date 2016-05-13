@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import unittest
+import json
 
 from flask import url_for
 
@@ -17,8 +18,13 @@ class MyTestCase(unittest.TestCase):
 
 	def test_whoami(self):
 		testcase = self
-		url = url_for('whoami')
+		with self.app.test_request_context():
+			url = url_for('whoami')
 		rv = self.client.open(url, method='GET')
-		testcase.assertInInstance(rv, dict)
-		testcase.assertTrue('message' in rv)
-		testcase.assertIsInstance(rv['message'], basestring)
+		data = rv.get_data()
+		testcase.assertEqual(rv.mimetype, 'application/json')
+		testcase.assertEqual(rv.status_code, 200)
+		data = json.loads(data)
+		testcase.assertIsInstance(data, dict)
+		testcase.assertTrue('message' in data)
+		testcase.assertIsInstance(data['message'], basestring)
