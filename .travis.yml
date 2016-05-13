@@ -21,9 +21,9 @@ before_install:
 install: pip install -r requirements.txt
 addons:
   postgresql: '9.4'
-  artifacts:
-    paths:
-    - "${APP_BUNDLE}"
+  # artifacts:
+  #   paths:
+  #   - "${APP_BUNDLE}"
 services:
 - postgresql
 before_script:
@@ -32,3 +32,6 @@ script: nosetests
 after_script:
 - zip -r ${APP_BUNDLE} . -x venv\* ./.\* \*__pycache__\* \*.pyc
 - set
+after_success:
+- curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
+- ~/bin/artifacts upload
