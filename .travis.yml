@@ -36,7 +36,7 @@ before_script:
 script: nosetests
 after_script:
   - echo creating software bundle ${APP_BUNDLE}, pwd':' ${PWD}
-  - zip -r ${APP_BUNDLE} -x venv\* ./.\* \*__pycache__\* \*.pyc
+  - zip -r ${APP_BUNDLE} . -x venv\* ./.\* \*__pycache__\* \*.pyc
   - ls -l ${APP_BUNDLE}
   - ls
   - pwd
