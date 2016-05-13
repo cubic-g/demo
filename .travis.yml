@@ -27,7 +27,6 @@ addons:
   postgresql: '9.4'
   artifacts:
     paths:
-      - requirements.txt
       - ${APP_BUNDLE}
 services:
   - postgresql
