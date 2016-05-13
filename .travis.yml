@@ -1,33 +1,25 @@
-# configuration for travis-ci
-
 language: python
-
 python:
-  - "2.7"
-
-# blacklist
-branches:
-  except:
-    - development
-
-# whitelist
+- '2.7'
 branches:
   only:
-    - master
-    - stage
-
+  - master
+  - stage
 before_install:
-  - sudo apt-get -qq update
-
-install: "pip install -r requirements.txt"
-
+- sudo apt-get -qq update
+install: pip install -r requirements.txt
 addons:
-  postgresql: "9.4"
-
+  postgresql: '9.4'
 services:
-  - postgresql
-
+- postgresql
 before_script:
-  - psql -c 'create database demo_db;' -U postgres
-
+- psql -c 'create database demo_db;' -U postgres
 script: nosetests
+deploy:
+  provider: s3
+  access_key_id: 'AKIAI24XBD5GSZ2L3GHQ'
+  secret_access_key:
+    secure: NS3+/LLN+Uj24GtxZM3vg0MRXCGODpDEvXylKbl3Iz7/FDJIqF362ecp3LWFT8JmbOg7nBAQvd+9u8PCg7NQLCGZKE/l5iqWZ5iJv10XACPzhKItrtDSG9Vc2z9SPg3+bc+CIvWzM9OhgyLB0LTeemHzeM80PQn3TIcF/TxBuPypAh27DLamVZhh3HCkHRy1E3LHiS28ChxmMUeOGat+hnSK2mWzzCO3wXXpgHmaZPSV78gUC2RX2z7QrFVK4TK0v0Pu+2u0bEiNiMtFiwxtOYutBntme2UqnCnuHBh/DBnw6LBbytsFL0K/I9hu0FTVKKMotTFJK+ZSf1E/ZLmJp/Xr+OJpSiMqsKCCemaBK7+nP+NR8gY+M3AnrtuqVQ5jKyGj0HUajpZMogajg2CndLRJy9fCXVNHgUDJTHpNxWm1Gk8+mVBohfCZPLghPzNfBMaSdNuY6kw+0JFBI9fFr18+BzsKsFqOD4nORWUTeVoXYpg+/qepS0sRoS00KBqg/nPsHICmlSHV0S/ZDaAgRYbcxOO/K6GVK2TJbkUoltsvZTVIXGTc6QHepb1ddL1I2mb0FhNuqDjBXh2iSIC8Vznf7Hfg5JJ+LgAFBa9Trmn2bX8y3bsfNdIcS2U4JIZ/pTXEWgKQSKYBJ9mbVepGTMEvEqHgMwRLdniSCTLIFas=
+  bucket: 'appen-file-upload-example-20150622'
+  skip_cleanup: true
+  region: us-west-2
