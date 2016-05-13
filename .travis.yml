@@ -5,6 +5,9 @@ branches:
   only:
   - master
   - stage
+env:
+  global:
+    - secure: "UD7ji6+bMAUkltQwSj5KEG4dW0uAkFIFiM9ZcQAmyXUT44U4oolBBDtKSjwmZn8OQwhy8JKMaNn5jr/P1Y7ON4qmLvH/fGH0hx4w5sX1TCrhl+rnxwoqaQKfK3Uq6wwbfyGVb4MPLBrnBj5XDof2g9KaEuBb8UmkdXhIwUvKKdZ1uhTeulZZp2CzRw+zTv4u7K0H5OUNroRT/Tkn7KGQrfzbKp6Bgb4pHw9yx3W9n33cDgx0u5sT/hnPZSj7JdW6R9B243iJMxkynVfDMmGXSgVEoDYMQyGSN1g6ABd7l2FRuwevXAJnrvUhVdrMtJyQ8jbLcCqV4++POjfscp5FVAog8TKf7jkoQbEnhgUnE/54zlIusiQceRkfICDwYHWZFWDMl4++XyQtbV5eqwLYlLE7UyMIyOE9ixhq1qGWut5/voGgzrdJ9TyeCRBHQ0unJkRq1RiMAKgePddHZHuEeqIZ9DaE2wUpjhsA3EiWQqnKlzBVq/wBr3TkZt7Imz+rQu/t2aXOB7vNAXTOS8CzU2hfI+3kdR9a1UTtEnNrY3c7yv0DFo9g3KAhogYv46V8k15sGjNi/t5NdlgsPENxP0jeJx8D1jJ/svHEyz1SfZMQ6zFChnX/nJghBjPVosD17KwraC7EYN9uhxFkbOQavgdCshSge9QDL6Xh1DzUkXQ="
 before_install:
 - sudo apt-get -qq update
 install: pip install -r requirements.txt
@@ -17,7 +20,7 @@ before_script:
 script: nosetests
 deploy:
   provider: s3
-  access_key_id: "AKIAI24XBD5GSZ2L3GHQ"
+  access_key_id: ${ACCESS_KEY_ID}
   secret_access_key:
     secure: "lZI7eMIV0AQfCntRNd+vCZyUs35PzMlyRcAE/1/IU8p0j6V5JBSn9LetZmqUPRvmlo8Gesg8jpx0Rofr2WjChD8qG1BjN44V+/jBcFzXd9dVJ81M5B+2cz4ICI8O0dp3rlnfJkYMkJe4LOsUvENR94DsvVo+jFPfqyk+naaWPH7pIYWPfJwhu0aJo7/igtgnpoWvZZlswCnQ4TmljIh2mo7hVLJCsQKvh3ZN9kJpXSbKm3IG4vqXCTfZqoa4v9Or9tRcm02DFg3Il4AJLXfMTQQEY2QGeHQs6MuJ9zVkEH7xtq5qIGYcD+JiJdEJ0TZTuuxRvGPSopvzKe5mBg2U5F8Z9rHFaOp2ya51zOqrdyLm6A/rJ2ApHkZYfYa62dP1IR72JdUG6vKR0qLnrdIE6xfI7bgB1Jrlhg0fSfZTAI+pl+XpBCA4lOJl1erTz5OrW+ue9U6NddYjXOM4RY4fVNQGTOvER5zlVpLsNp+YqzVPS85xMGRII48aJgqpL9C8IQtscf2WeuPvH6UiDw3hoB74hG2/H4JI5F1jrpAQMO+lPdHfRbmhTnb2uxJIC+aIra+hE2szBG/aR1pxKSXkbp8LqfsLXNfvUUDdlvA4opK1YEEAC8toB6vEA7/JzW631CSOlB818+QvyZksXRWPIatYKRNV9i6rvVPAHMwEArA="
   bucket: "appen-file-upload-example-20150622"
