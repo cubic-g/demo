@@ -1,6 +1,6 @@
 language: python
 python:
-- '2.7'
+  - '2.7'
 branches:
   only:
   - master
@@ -10,16 +10,22 @@ env:
     - secure: "UD7ji6+bMAUkltQwSj5KEG4dW0uAkFIFiM9ZcQAmyXUT44U4oolBBDtKSjwmZn8OQwhy8JKMaNn5jr/P1Y7ON4qmLvH/fGH0hx4w5sX1TCrhl+rnxwoqaQKfK3Uq6wwbfyGVb4MPLBrnBj5XDof2g9KaEuBb8UmkdXhIwUvKKdZ1uhTeulZZp2CzRw+zTv4u7K0H5OUNroRT/Tkn7KGQrfzbKp6Bgb4pHw9yx3W9n33cDgx0u5sT/hnPZSj7JdW6R9B243iJMxkynVfDMmGXSgVEoDYMQyGSN1g6ABd7l2FRuwevXAJnrvUhVdrMtJyQ8jbLcCqV4++POjfscp5FVAog8TKf7jkoQbEnhgUnE/54zlIusiQceRkfICDwYHWZFWDMl4++XyQtbV5eqwLYlLE7UyMIyOE9ixhq1qGWut5/voGgzrdJ9TyeCRBHQ0unJkRq1RiMAKgePddHZHuEeqIZ9DaE2wUpjhsA3EiWQqnKlzBVq/wBr3TkZt7Imz+rQu/t2aXOB7vNAXTOS8CzU2hfI+3kdR9a1UTtEnNrY3c7yv0DFo9g3KAhogYv46V8k15sGjNi/t5NdlgsPENxP0jeJx8D1jJ/svHEyz1SfZMQ6zFChnX/nJghBjPVosD17KwraC7EYN9uhxFkbOQavgdCshSge9QDL6Xh1DzUkXQ="
     - secure: "YO/GzUdFUXxZpgAe2HgIxA0yEytMPfUM9235UkzDWUgw9S84ht8GrRcX2t6iJs1MBhUK3DaeMD11MA8c9+gAY6tLtwUOCGJas+moYOlbEi41xypiOgwN6FYoQu243AWQcwoi79YNYSRBBSRKyVO+FrQpyNyf3xrtU8Mvahm+/ZE1q9cIHiWaEX0lrIvGnzOoN6tAebsoRVmBDt9Vsrb5gVUfPcWLyHA6vikEMY1xefADgBH158Ek4o/OmwyHtiqTu2E1PPLP6OxWeL5ZrZtIVRRCBAyoapbWGIHJpRzWOk9G95C1j2Ipb/axonHhnFqhSzKRZne4p0jP1NpiqiUBfzaBJYjre2HBJECkBSSual4DDL+uXxpwzS816RoEiRmg/PCTQK/xUcHnUM8B2cmPUrzWx4x8uIcRzeC8BsXhwHE0te5p9ZuIDwSs7wc2GkYm/iVLMML3y9QK5lQ0gKfuUYcvWHtYvyoithec0eqUVnTfCx4QCGyO59Mxv+98LKrQ9kjqppe681DDHcaYnIcFALKW0mvmcF4C/e5L7S/I+0FZ4/LEkw5BDKFxsOkA2188i0qpo0aNzakHd8GFhbcfyyVZvxq5d0bMXohldeluaDvl0QdrXNDdHgAxSbITFneptDb10uQKUQ8J/5gaHfhgRWjsZ51gQCeEmr0rUYHZRLQ="
     - secure: "RuNWeSmNgeOL26BgbDbr4tF0Iz10LAGAG7ublOLti9UFsJTkB1SlK8mAgemKN6+HuOuXr/nXZgnD03pMIp2XeNMhX3QuNuYgJcFmQMMZNs6jsnByXWY1qVMRD2yGH1KvjKEdZu2mbuIhmXuEjBohMIVNA4BjN7qtxounEgwtCTD9Kd4/FXQrNlUR4AWO0Py0tGVl9DUsYFH3a0sleXxJDnIA7jjScqu78GNNSwPAn9XSjAFNW7F0avGteNXX06r7XZ2kmY0dxeupnsDjCbPW568QQDt9OtjsK/Eh7b05089DdPRDWMJhNT/qbpwNEokizlTV8P+CR/8VkqUaRO/42aBsE/ffcOe4piXxPgEy0DkJLlZBbWfkzHWGSBS4CMLnT5jSzEQDqIiRh2uoCl/3XK8E85PK3vusy7hRrKXIyotJ6JzWOD+9paQM0/Sup+ZTN+Ia2uMy0pq+jZ/vTKCpYtG2eEzZEOsGpmRPczfvNy4CxOxtLO3+Wt48e3Db5v2m+c2rk4d8NMs9daUKqdLCehLyZDODHaJmGdRHGOzuplqL7/X0RTaxrYimYSYL6BJ8AyHVpcHocnSQvOTg6WoM8pUHSU8RfF5UJ3ee53Bm4i1os5KeUSiay2x5+OIrSjPTaIAU6xe2cVT2paYvzg0n4IFCfJtD//9CCC7y485ekw8="
+    - secure: "muDAg87a1/XqjIjcFiM8gweHOkUnDm1H5CjJ404S6AX73IYKOhbF0wFWgQofF8zK9qwR4aYiePIoLOLdU3dh964JahTMnWMbpdidsL8ES4PC+t7LZrLMEW2qfjpwv6QyYyudFKb+4+dCtOwhHRIUUgX/YABl9LgBQ+eLPDJKIS40M2hQLQR1HkwfzDxFVzwU3LFqBl4cYw/1weB1daJ5eVFDwmLLc3htfVgesys+L2wJmdPHjqlO/08f8lQ7ivg5iBlkyvRyEzGMRz2stC+nXihLctY8M9tlbpHZS+iuz75XkW56q7YTfscCAaoSk+znEKTlrsCOvRRUmpABEarWK2ModuDLtyfP5oaGB70Iy4hLEOwXZnmdJszQOVijHtj1y8BusIQSfUK63c1p39ivk8SPO7qPV9nngrExy+5fp8J0yU/RnCQ4uEZo3obS/kwYy9nBOjeTnXEgZyHuf6BDYxw04XzTPRNUKkvODGUuffAHHDHirdRbvw4IL+yOl+02QEkPQa3ZwaxmTVqmhOMBhQc9WZNjPqrQnmuC7292dHjXYa5S0QN+MwcQJh/Uby8Kim1rFMBjzpuVpKbeJZIa2qFh2JnPWIJj4OXbF1iIYCUUVYgCwiaenO5EIKeXBaKX53UsvrvKtJhHta24JvqiiFFeLjYorpVkZWWt7Mcxi6E="
 before_install:
-- sudo apt-get -qq update
+  - sudo apt-get -qq update
 install: pip install -r requirements.txt
 addons:
   postgresql: '9.4'
+  artifacts:
+    paths:
+      - ${APP_BUNDLE}
 services:
-- postgresql
+  - postgresql
 before_script:
-- psql -c 'create database demo_db;' -U postgres
+  - psql -c 'create database demo_db;' -U postgres
 script: nosetests
+after_script:
+  - zip -r ${APP_BUNDLE} -x venv\* ./.\* \*__pycache__\* \*.pyc
 deploy:
   provider: s3
   access_key_id: ${ACCESS_KEY_ID}
