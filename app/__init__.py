@@ -23,4 +23,8 @@ def create_app(config_name):
 	def whoami():
 		return jsonify(message=os.environ.get('AWS_ENV', 'unknown'))
 
+	@app.route('/hello')
+	def hello():
+		return jsonify(message='hello, world.')
+
 	return app
