@@ -35,9 +35,9 @@ before_script:
   - psql -c 'create database demo_db;' -U postgres
 script: nosetests
 after_script:
-  - !!str echo creating software bundle ${APP_BUNDLE}, pwd: ${PWD}
+  - echo creating software bundle ${APP_BUNDLE}, pwd':' ${PWD}
   - zip -r ${APP_BUNDLE} -x venv\* ./.\* \*__pycache__\* \*.pyc
-  - echo 
+  - ls -l ${APP_BUNDLE}
 # deploy:
 #   provider: s3
 #   access_key_id: ${ACCESS_KEY_ID}
