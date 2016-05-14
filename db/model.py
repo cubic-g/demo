@@ -48,10 +48,25 @@ _names = set(locals().keys()) | {'_names'}
 class User(Base):
 	__table__ = t_user
 	userId = synonym('id')
+	addresses = relationship('Address', secondary=t_user_address,
+		order_by='Address.addressId')
 
 class UserSchema(Schema):
+	addresses = fields.Nested('AddressSchema', many=True)
 	class Meta:
-		fields = ('userId', 'name', 'familyName', 'givenName')
+		fields = ('userId', 'email', 'familyName', 'givenName',
+			'addresses')
+
+
+# Address
+class Address(Base):
+	__table__ = t_address
+	addressId = synonym('id')
+
+class AddressSchema(Schema):
+	class Meta:
+		fields = ('addressId', 'street0', 'street1', 'street2',
+			'city', 'province')
 
 
 ##########################################################################

@@ -5,11 +5,14 @@ import os
 from flask import Flask, send_file, jsonify
 
 from config import config
+from db import database as db
+import db.model as m
 
 def create_app(config_name):
 	app = Flask(__name__)
 	app.config.from_object(config[config_name])
 	config[config_name].init_app(app)
+	db.init_app(app)
 
 	@app.route('/')
 	def index():
@@ -26,5 +29,13 @@ def create_app(config_name):
 	@app.route('/hello')
 	def hello():
 		return jsonify(message='hello, world.')
+
+	@app.route('/users')
+	def users():
+		return jsonify(users=m.User.dump(m.User.query.all()))
+
+	@app.route('/address')
+	def addresses():
+		return jsonify(addresses=m.Address.dump(m.Address.query.all()))
 
 	return app
