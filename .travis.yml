@@ -29,7 +29,7 @@ services:
 - postgresql
 before_script:
 - psql -c 'create database demo_db;' -U postgres
-- psql python manager.py db upgrade
+- python manager.py db upgrade
 - psql < db/test_data.sql demo_db
 script: nosetests
 after_script:
