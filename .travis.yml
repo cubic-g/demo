@@ -33,7 +33,7 @@ before_script:
 - psql < db/test_data.sql demo_db
 script: nosetests
 after_script:
-- zip -r ${APP_BUNDLE} application.py config.py requirements.txt app db -x venv\* ./.\* ./db/\*.sql \*__pycache__\* \*.pyc
+- zip -r ${APP_BUNDLE} . -x venv\* ./.\* ./db/\*.sql \*__pycache__\* \*.pyc
 - ~/bin/artifacts upload
 after_success:
 - curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
