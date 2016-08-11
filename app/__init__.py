@@ -26,27 +26,27 @@ def create_app(config_name):
 	from app.api import api_1_0
 	app.register_blueprint(api_1_0, url_prefix='/api/1.0/')
 
-	@app.before_request
-	def get_current_user():
-		data = request.environ.get('myauthmiddleware', None)
-		if data and data['REMOTE_USER_ID']:
-			user = m.User.query.get(data['REMOTE_USER_ID'])
-		else:
-			user = m.User.query.get(1)
-		session['current_user'] = user
+	# @app.before_request
+	# def get_current_user():
+	# 	data = request.environ.get('myauthmiddleware', None)
+	# 	if data and data['REMOTE_USER_ID']:
+	# 		user = m.User.query.get(data['REMOTE_USER_ID'])
+	# 	else:
+	# 		user = m.User.query.get(1)
+	# 	session['current_user'] = user
 
-	@app.after_request
-	def clear_current_user(resp):
-		session['current_user'] = None
-		return resp
+	# @app.after_request
+	# def clear_current_user(resp):
+	# 	session['current_user'] = None
+	# 	return resp
 
-	@app.teardown_request
-	def terminate_transaction(exception):
-		if exception is None:
-			SS.commit()
-		else:
-			SS.rollback()
-		SS.remove()
+	# @app.teardown_request
+	# def terminate_transaction(exception):
+	# 	if exception is None:
+	# 		SS.commit()
+	# 	else:
+	# 		SS.rollback()
+	# 	SS.remove()
 
 	@app.route('/')
 	def index():
