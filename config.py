@@ -8,6 +8,7 @@ class Config:
 	SQLALCHEMY_COMMIT_ON_TEARDOWN = True
 	SQLALCHEMY_TRACK_MODIFICATIONS = False
 	SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'postgresql://localhost/demo_db'
+	AUTHENTICATION_LOGIN_URL = os.environ.get('AUTHENTICATION_LOGIN_URL') or ''
 	@staticmethod
 	def init_app(app):
 		pass
