@@ -4,6 +4,6 @@ Flask-Migrate==3.0.1
 Flask-SQLAlchemy==2.5.1
 SQLAlchemy==1.4.18
 marshmallow==3.12.1
-psycopg2==2.8.6
+psycopg2==2.9.1
 coverage==5.5
 pycrypto>=2.6.1
