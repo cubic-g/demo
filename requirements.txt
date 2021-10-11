@@ -5,5 +5,5 @@ Flask-SQLAlchemy==2.5.1
 SQLAlchemy==1.4.25
 marshmallow==3.13.0
 psycopg2==2.9.1
-coverage==5.5
+coverage==6.0.2
 pycrypto>=2.6.1
