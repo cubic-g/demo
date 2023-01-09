@@ -1,6 +1,6 @@
 Flask==2.2.2
 Flask-Script==2.0.6
-Flask-Migrate==4.0.0
+Flask-Migrate==4.0.1
 Flask-SQLAlchemy==3.0.2
 SQLAlchemy==1.4.45
 marshmallow==3.19.0
