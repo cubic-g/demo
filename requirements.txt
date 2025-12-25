@@ -2,7 +2,7 @@ Flask==3.1.2
 Flask-Script==2.0.6
 Flask-Migrate==4.1.0
 Flask-SQLAlchemy==3.1.1
-SQLAlchemy==2.0.44
+SQLAlchemy==2.0.45
 marshmallow==4.1.2
 psycopg2==2.9.11
 coverage==7.13.0
